@@ -13,4 +13,8 @@
     <string name="_8">8</string>
     <string name="_9">9</string>
     <string name="SUB">-</string>
+    <string name="_0">0</string>
+    <string name="DOT">.</string>
+    <string name="MUL">x</string>
+    <string name="DIV">/</string>
 </resources>

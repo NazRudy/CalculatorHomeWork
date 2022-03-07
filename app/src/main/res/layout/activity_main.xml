@@ -74,9 +74,9 @@
         android:id="@+id/buttonC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:text="@string/c"
         android:textSize="25sp"
-        android:layout_margin="8dp"
         app:layout_constraintStart_toEndOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
@@ -161,6 +161,48 @@
         android:textSize="25sp"
         app:layout_constraintStart_toEndOf="@+id/button9"
         app:layout_constraintTop_toBottomOf="@+id/buttonADD" />
+
+    <Button
+        android:id="@+id/button0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="88dp"
+        android:text="@string/_0"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
+
+    <Button
+        android:id="@+id/buttonDOT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/DOT"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/button0"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+    <Button
+        android:id="@+id/buttonMUL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/MUL"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/buttonDOT"
+        app:layout_constraintTop_toBottomOf="@+id/button9" />
+
+    <Button
+        android:id="@+id/buttonDIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/DIV"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/buttonMUL"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSUB" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
