@@ -17,4 +17,5 @@
     <string name="keyMul">x</string>
     <string name="keyDiv">/</string>
     <string name="disres0">0</string>
+    <string name="keyEquals">\n=\n</string>
 </resources>
