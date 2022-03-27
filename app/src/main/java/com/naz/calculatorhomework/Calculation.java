@@ -15,16 +15,17 @@ public class Calculation implements Parcelable {
     private Boolean mulbool = false;            // Флаг, будет умножение
     private Boolean divbool = false;            // Флаг, будет деление
 
-    public Calculation(){
+    public Calculation() {
 
     }
 
     protected Calculation(Parcel in) {
-        if (in.readByte() == 0) {
+        /*if (in.readByte() == 0) {
             result = null;
         } else {
             result = in.readDouble();
-        }
+        }*/
+        result = in.readDouble();
         numOne = in.readString();
         numTwo = in.readString();
         byte tmpAddbool = in.readByte();
@@ -159,6 +160,8 @@ public class Calculation implements Parcelable {
     public void add() {
         result = Double.parseDouble(numTwo) + Double.parseDouble(numOne);
         addbool = false;
+        numOne = "";
+        numTwo = "";
     }
 
     /**
@@ -167,6 +170,8 @@ public class Calculation implements Parcelable {
     public void sub() {
         result = Double.parseDouble(numTwo) - Double.parseDouble(numOne);
         subbool = false;
+        numOne = "";
+        numTwo = "";
     }
 
     /**
@@ -175,6 +180,8 @@ public class Calculation implements Parcelable {
     public void mul() {
         result = Double.parseDouble(numTwo) * Double.parseDouble(numOne);
         mulbool = false;
+        numOne = "";
+        numTwo = "";
     }
 
     /**
@@ -183,6 +190,8 @@ public class Calculation implements Parcelable {
     public void div() {
         result = Double.parseDouble(numTwo) / Double.parseDouble(numOne);
         divbool = false;
+        numOne = "";
+        numTwo = "";
     }
 
     @Override
@@ -192,12 +201,13 @@ public class Calculation implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        if (result == null) {
+        /*if (result == null) {
             parcel.writeByte((byte) 0);
         } else {
             parcel.writeByte((byte) 1);
             parcel.writeDouble(result);
-        }
+        }*/
+        parcel.writeDouble(result);
         parcel.writeString(numOne);
         parcel.writeString(numTwo);
         parcel.writeByte((byte) (addbool == null ? 0 : addbool ? 1 : 2));

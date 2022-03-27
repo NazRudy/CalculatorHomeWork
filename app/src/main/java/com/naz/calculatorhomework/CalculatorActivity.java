@@ -28,7 +28,9 @@ public class CalculatorActivity extends AppCompatActivity {
         calculation = new Calculation();                    // класс для расчетов
 
         if (savedInstanceState!=null){
+            display.setText(savedInstanceState.getString("display"));
             calculation=savedInstanceState.getParcelable("keyCalculation");
+
         }
 
         // Слушатель нажатия кнопок
@@ -134,6 +136,9 @@ public class CalculatorActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
+        outState.putString("display", (String) display.getText());
         outState.putParcelable("keyCalculation", calculation);
+
+
     }
 }
