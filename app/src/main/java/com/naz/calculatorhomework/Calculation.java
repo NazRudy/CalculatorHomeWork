@@ -1,9 +1,12 @@
 package com.naz.calculatorhomework;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Операции счета
  */
-public class Calculation {
+public class Calculation implements Parcelable {
     public Double result = 0d;                  // результат счета
     private String numOne = "";                 // Второе число
     public String numTwo = "";                  // Первое число
@@ -11,6 +14,40 @@ public class Calculation {
     private Boolean subbool = false;            // Флаг, будет вычитание
     private Boolean mulbool = false;            // Флаг, будет умножение
     private Boolean divbool = false;            // Флаг, будет деление
+
+    public Calculation(){
+
+    }
+
+    protected Calculation(Parcel in) {
+        if (in.readByte() == 0) {
+            result = null;
+        } else {
+            result = in.readDouble();
+        }
+        numOne = in.readString();
+        numTwo = in.readString();
+        byte tmpAddbool = in.readByte();
+        addbool = tmpAddbool == 0 ? null : tmpAddbool == 1;
+        byte tmpSubbool = in.readByte();
+        subbool = tmpSubbool == 0 ? null : tmpSubbool == 1;
+        byte tmpMulbool = in.readByte();
+        mulbool = tmpMulbool == 0 ? null : tmpMulbool == 1;
+        byte tmpDivbool = in.readByte();
+        divbool = tmpDivbool == 0 ? null : tmpDivbool == 1;
+    }
+
+    public static final Creator<Calculation> CREATOR = new Creator<Calculation>() {
+        @Override
+        public Calculation createFromParcel(Parcel in) {
+            return new Calculation(in);
+        }
+
+        @Override
+        public Calculation[] newArray(int size) {
+            return new Calculation[size];
+        }
+    };
 
     /**
      * Ввод номера
@@ -146,5 +183,26 @@ public class Calculation {
     public void div() {
         result = Double.parseDouble(numTwo) / Double.parseDouble(numOne);
         divbool = false;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        if (result == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeDouble(result);
+        }
+        parcel.writeString(numOne);
+        parcel.writeString(numTwo);
+        parcel.writeByte((byte) (addbool == null ? 0 : addbool ? 1 : 2));
+        parcel.writeByte((byte) (subbool == null ? 0 : subbool ? 1 : 2));
+        parcel.writeByte((byte) (mulbool == null ? 0 : mulbool ? 1 : 2));
+        parcel.writeByte((byte) (divbool == null ? 0 : divbool ? 1 : 2));
     }
 }

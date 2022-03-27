@@ -1,5 +1,6 @@
 package com.naz.calculatorhomework;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -14,7 +15,7 @@ import android.widget.TextView;
  */
 public class CalculatorActivity extends AppCompatActivity {
 
-    private Calculation calculation;
+    public Calculation calculation;
     private TextView display;
 
     @Override
@@ -25,6 +26,10 @@ public class CalculatorActivity extends AppCompatActivity {
         display = findViewById(R.id.display);               // дисплей для вывода информации
 
         calculation = new Calculation();                    // класс для расчетов
+
+        if (savedInstanceState!=null){
+            calculation=savedInstanceState.getParcelable("keyCalculation");
+        }
 
         // Слушатель нажатия кнопок
         View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -124,5 +129,11 @@ public class CalculatorActivity extends AppCompatActivity {
     // Вывод информации на дисплей
     public void setText() {
         display.setText(calculation.getResult());
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable("keyCalculation", calculation);
     }
 }
