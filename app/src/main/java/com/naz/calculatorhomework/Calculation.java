@@ -22,9 +22,9 @@ public class Calculation {
     }
 
     /**
-     * Выход результата
+     * Выход результата нажатий
      *
-     * @return - результат операций
+     * @return - результат ввода
      */
     public String getResult() {
         result = Double.parseDouble(numOne);
