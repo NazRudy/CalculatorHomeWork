@@ -111,7 +111,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
-        android:id="@+id/buttonADD"
+        android:id="@+id/buttonAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -152,7 +152,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button6" />
 
     <Button
-        android:id="@+id/buttonSUB"
+        android:id="@+id/buttonSub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -160,7 +160,7 @@
         android:text="@string/keySub"
         android:textSize="25sp"
         app:layout_constraintStart_toEndOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/buttonADD" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdd" />
 
     <Button
         android:id="@+id/button0"
@@ -175,7 +175,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button7" />
 
     <Button
-        android:id="@+id/buttonDOT"
+        android:id="@+id/buttonDot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -185,26 +185,26 @@
         app:layout_constraintTop_toBottomOf="@+id/button8" />
 
     <Button
-        android:id="@+id/buttonMUL"
+        android:id="@+id/buttonMul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:backgroundTint="#ff0000"
         android:text="@string/keyMul"
         android:textSize="25sp"
-        app:layout_constraintStart_toEndOf="@+id/buttonDOT"
+        app:layout_constraintStart_toEndOf="@+id/buttonDot"
         app:layout_constraintTop_toBottomOf="@+id/button9" />
 
     <Button
-        android:id="@+id/buttonDIV"
+        android:id="@+id/buttonDiv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:backgroundTint="#ff0000"
         android:text="@string/keyDiv"
         android:textSize="25sp"
-        app:layout_constraintStart_toEndOf="@+id/buttonMUL"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSUB" />
+        app:layout_constraintStart_toEndOf="@+id/buttonMul"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSub" />
 
     <Button
         android:id="@+id/buttonEquals"
@@ -214,7 +214,7 @@
         android:text="@string/keyEquals"
         android:layout_marginTop="8dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonDIV"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonDiv"
         app:layout_constraintStart_toEndOf="@+id/frameLayout"
         app:layout_constraintTop_toTopOf="parent" />
 

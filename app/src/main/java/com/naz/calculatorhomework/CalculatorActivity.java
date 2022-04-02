@@ -15,6 +15,8 @@ import android.widget.TextView;
  */
 public class CalculatorActivity extends AppCompatActivity {
 
+    public static final String DISPLAY = "display";                     // переменная-ключ для сохранения состояния дисплея
+    public static final String KEY_CALCULATION = "keyCalculation";      // переменная-ключ для сохранения состояния объета
     public Calculation calculation;
     private TextView display;
 
@@ -27,9 +29,9 @@ public class CalculatorActivity extends AppCompatActivity {
 
         calculation = new Calculation();                    // класс для расчетов
 
-        if (savedInstanceState!=null){
-            display.setText(savedInstanceState.getString("display"));
-            calculation=savedInstanceState.getParcelable("keyCalculation");
+        if (savedInstanceState != null) {
+            display.setText(savedInstanceState.getString(DISPLAY));
+            calculation = savedInstanceState.getParcelable(KEY_CALCULATION);
 
         }
 
@@ -118,11 +120,11 @@ public class CalculatorActivity extends AppCompatActivity {
         findViewById(R.id.button8).setOnClickListener(onClickListener);
         findViewById(R.id.button9).setOnClickListener(onClickListener);
         findViewById(R.id.button0).setOnClickListener(onClickListener);
-        findViewById(R.id.buttonADD).setOnClickListener(onClickListener);
-        findViewById(R.id.buttonSUB).setOnClickListener(onClickListener);
-        findViewById(R.id.buttonMUL).setOnClickListener(onClickListener);
-        findViewById(R.id.buttonDIV).setOnClickListener(onClickListener);
-        findViewById(R.id.buttonDOT).setOnClickListener(onClickListener);
+        findViewById(R.id.buttonAdd).setOnClickListener(onClickListener);
+        findViewById(R.id.buttonSub).setOnClickListener(onClickListener);
+        findViewById(R.id.buttonMul).setOnClickListener(onClickListener);
+        findViewById(R.id.buttonDiv).setOnClickListener(onClickListener);
+        findViewById(R.id.buttonDot).setOnClickListener(onClickListener);
         findViewById(R.id.buttonEquals).setOnClickListener(onClickListener);
         findViewById(R.id.buttonC).setOnClickListener(onClickListener);
 
@@ -136,8 +138,8 @@ public class CalculatorActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("display", (String) display.getText());
-        outState.putParcelable("keyCalculation", calculation);
+        outState.putString(DISPLAY, (String) display.getText());
+        outState.putParcelable(KEY_CALCULATION, calculation);
 
 
     }

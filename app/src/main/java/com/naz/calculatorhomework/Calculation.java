@@ -7,17 +7,17 @@ import android.os.Parcelable;
  * Операции счета
  */
 public class Calculation implements Parcelable {
-    public Double result = 0d;                  // результат счета
+    private Double result = 0d;                  // результат счета
     private String numOne = "";                 // Второе число
-    public String numTwo = "";                  // Первое число
+    private String numTwo = "";                  // Первое число
     private Boolean addbool = false;            // Флаг, будет сложение
     private Boolean subbool = false;            // Флаг, будет вычитание
     private Boolean mulbool = false;            // Флаг, будет умножение
     private Boolean divbool = false;            // Флаг, будет деление
 
     public Calculation() {
-
     }
+
 
     protected Calculation(Parcel in) {
         /*if (in.readByte() == 0) {
