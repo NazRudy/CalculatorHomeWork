@@ -15,8 +15,8 @@ import android.widget.TextView;
  */
 public class CalculatorActivity extends AppCompatActivity {
 
-    public static final String DISPLAY = "display";                     // переменная-ключ для сохранения состояния дисплея
-    public static final String KEY_CALCULATION = "keyCalculation";      // переменная-ключ для сохранения состояния объета
+    public static final String DISPLAY = "display";
+    public static final String KEY_CALCULATION = "keyCalculation";
     public Calculation calculation;
     private TextView display;
 
@@ -29,12 +29,10 @@ public class CalculatorActivity extends AppCompatActivity {
 
         calculation = new Calculation();                    // класс для расчетов
 
-        if (savedInstanceState != null) {
+        if (savedInstanceState!=null){
             display.setText(savedInstanceState.getString(DISPLAY));
-            calculation = savedInstanceState.getParcelable(KEY_CALCULATION);
-
+            calculation=savedInstanceState.getParcelable(KEY_CALCULATION);
         }
-
         // Слушатель нажатия кнопок
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -80,23 +78,23 @@ public class CalculatorActivity extends AppCompatActivity {
                         calculation.setNumOne("0");
                         setText();
                         break;
-                    case R.id.buttonDOT:
+                    case R.id.buttonDot:
                         calculation.setNumOne(".");
                         setText();
                         break;
-                    case R.id.buttonADD:
+                    case R.id.buttonAdd:
                         calculation.setAddbool(true);
                         display.setText("+");
                         break;
-                    case R.id.buttonSUB:
+                    case R.id.buttonSub:
                         calculation.setSubbool(true);
                         display.setText("-");
                         break;
-                    case R.id.buttonMUL:
+                    case R.id.buttonMul:
                         calculation.setMulbool(true);
                         display.setText("*");
                         break;
-                    case R.id.buttonDIV:
+                    case R.id.buttonDiv:
                         calculation.setDivbool(true);
                         display.setText("/");
                         break;
