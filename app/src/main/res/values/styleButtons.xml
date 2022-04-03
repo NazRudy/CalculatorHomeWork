@@ -17,4 +17,7 @@
     <style name="CalcButton.Equals">
         <item name="backgroundTint">@color/romEqu</item>
     </style>
+    <style name="CalcButton.C">
+        <item name="backgroundTint">@color/zol</item>
+    </style>
 </resources>
