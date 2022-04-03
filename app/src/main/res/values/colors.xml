@@ -9,4 +9,14 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#ff0000</color>
     <color name="green">#008000</color>
+    <color name="sgreen">#66ff99</color>
+    <color name="ffccff">#ffccff</color>
+    <color name="c99ffcc">#99ffcc</color>
+    <color name="c6699ff">#6699ff</color>
+    <color name="cCCCCCC">#cccccc</color>
+    <color name="cCC0000">#CC0000</color>
+    <color name="romfon">#9FC9C7</color>
+    <color name="romkn">#DD9297</color>
+    <color name="romknac">#A21724</color>
+    <color name="romEqu">#4D8241</color>
 </resources>
