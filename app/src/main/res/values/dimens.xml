@@ -3,6 +3,7 @@
     <dimen name="display_size">50sp</dimen>
     <dimen name="button_text_size">45sp</dimen>
     <dimen name="layout_margin">8dp</dimen>
-    <dimen name="cornerRadius">15dp</dimen>
+    <dimen name="cornerRadius">45dp</dimen>
     <dimen name="strokeWidth">2dp</dimen>
+    <dimen name="sizeButton">90dp</dimen>
 </resources>
