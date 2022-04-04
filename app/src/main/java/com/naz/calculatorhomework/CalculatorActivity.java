@@ -79,7 +79,7 @@ public class CalculatorActivity extends AppCompatActivity {
                         setText();
                         break;
                     case R.id.buttonDot:
-                        calculation.setNumOne(".");
+                        calculation.setNumOne("0.");
                         setText();
                         break;
                     case R.id.buttonAdd:
