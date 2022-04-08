@@ -6,4 +6,5 @@
     <dimen name="cornerRadius">45dp</dimen>
     <dimen name="strokeWidth">2dp</dimen>
     <dimen name="sizeButton">90dp</dimen>
+    <dimen name="theme_size">24dp</dimen>
 </resources>

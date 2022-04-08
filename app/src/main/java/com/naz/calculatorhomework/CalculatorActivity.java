@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.naz.calculatorhomework.storage.Theme;
+import com.naz.calculatorhomework.storage.ThemeStorage;
+
 /**
  * Калькулятор
  * Нацветов Р.И.
@@ -23,6 +26,11 @@ public class CalculatorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Выставляем тему
+        Theme savedTheme= ThemeStorage.getInstance(getApplicationContext()).getTheme();
+        setTheme(savedTheme.getTheme());
+
         setContentView(R.layout.activity_main);
 
         display = findViewById(R.id.display);               // дисплей для вывода информации

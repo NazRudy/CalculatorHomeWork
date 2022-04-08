@@ -19,4 +19,7 @@
     <string name="keyDiv">/</string>
     <string name="disres0">0</string>
     <string name="keyEquals">=</string>
+    <string name="theme_one">One</string>
+    <string name="theme_two">Two</string>
+    <string name="theme">=Тема=</string>
 </resources>

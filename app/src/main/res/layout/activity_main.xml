@@ -15,11 +15,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/layout_margin"
         android:layout_marginTop="@dimen/layout_margin"
-        android:layout_marginBottom="@dimen/layout_margin"
         android:background="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@+id/buttonC"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/buttonTheme">
 
 
         <TextView
@@ -197,4 +196,13 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonDot" />
 
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_margin"
+        android:text="@string/theme"
+        android:textSize="@dimen/theme_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

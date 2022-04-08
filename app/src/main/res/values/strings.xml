@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">CalculatorHomeWork</string>
     <string name="key1">1</string>
     <string name="key2">2</string>
@@ -18,4 +18,7 @@
     <string name="keyDiv">/</string>
     <string name="disres0">0</string>
     <string name="keyEquals">=</string>
+    <string name="theme_one">One</string>
+    <string name="theme_two">Two</string>
+    <string name="theme">=theme=</string>
 </resources>
