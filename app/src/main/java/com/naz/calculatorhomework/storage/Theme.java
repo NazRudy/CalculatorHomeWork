@@ -7,8 +7,8 @@ import com.naz.calculatorhomework.R;
 
 public enum Theme {
     ONE(R.style.Theme_CalculatorHomeWork, R.string.theme_one, "THEME_ONE"),
-    TWO(R.style.Theme_CalculatorHomeWorkNight, R.string.theme_two, "THEME_TWO"),
-    THREE(R.style.Theme_CalculatorHomeWorkNight, R.string.theme_three, "THEME_ONE");
+    TWO(R.style.Theme_CalculatorHomeWorkNight, R.string.theme_two, "THEME_TWO");
+
 
     private @StyleRes
     final int theme;
