@@ -14,4 +14,9 @@
         <!-- Customize your theme here. -->
         <item name="materialButtonStyle">@style/CalcButton</item>
     </style>
+        <style name="Theme.CalculatorHomeWorkNightV2">
+        <item name="materialButtonStyle">@style/CalcButtonV2</item>
+    </style>
+
+    <style name="Theme">calkulatorHomeWorkNightV2</style>
 </resources>

@@ -1,19 +1,17 @@
 package com.naz.calculatorhomework;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.TestLooperManager;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.naz.calculatorhomework.storage.Theme;
 import com.naz.calculatorhomework.storage.ThemeStorage;
@@ -23,7 +21,6 @@ import com.naz.calculatorhomework.storage.ThemeStorage;
  * Нацветов Р.И.
  */
 public class CalculatorActivity extends AppCompatActivity {
-
 
 
     public static final String DISPLAY = "display";
@@ -39,14 +36,14 @@ public class CalculatorActivity extends AppCompatActivity {
 
         Theme savedTheme = storage.getTheme();
 
-        ActivityResultLauncher<Intent> launcher=registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
             public void onActivityResult(ActivityResult result) {
 
-                if (result.getResultCode()== Activity.RESULT_OK){
-                    Intent data=result.getData();
-                    Theme coosedTheme = (Theme) data.getSerializableExtra(ThemeSelectActivity.CHOOSED_THEME);
-                    storage.saveTheme(coosedTheme);
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent data = result.getData();
+                    Theme chosenTheme = (Theme) data.getSerializableExtra(ThemeSelectActivity.CHOSEN_THEME);
+                    storage.saveTheme(chosenTheme);
                     recreate();
 
                 }

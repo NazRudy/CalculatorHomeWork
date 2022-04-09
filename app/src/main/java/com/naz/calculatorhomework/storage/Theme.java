@@ -7,15 +7,19 @@ import com.naz.calculatorhomework.R;
 
 public enum Theme {
     ONE(R.style.Theme_CalculatorHomeWork, R.string.theme_one, "THEME_ONE"),
-    TWO(R.style.Theme_CalculatorHomeWorkNight, R.string.theme_two, "THEME_TWO");
+    TWO(R.style.Theme_CalculatorHomeWorkNight, R.string.theme_two, "THEME_TWO"),
+    THREE(R.style.Theme_CalculatorHomeWorkNight, R.string.theme_three, "THEME_ONE");
 
-    private @StyleRes final int theme;
+    private @StyleRes
+    final int theme;
 
-    private @StringRes int title;
-    private String key;
+    private @StringRes
+    final
+    int title;
+    private final String key;
 
     Theme(int theme, int title, String key) {
-        this.theme=theme;
+        this.theme = theme;
         this.title = title;
         this.key = key;
     }
