@@ -1,8 +1,14 @@
 package com.naz.calculatorhomework;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.TestLooperManager;
 import android.view.View;
@@ -18,6 +24,8 @@ import com.naz.calculatorhomework.storage.ThemeStorage;
  */
 public class CalculatorActivity extends AppCompatActivity {
 
+
+
     public static final String DISPLAY = "display";
     public static final String KEY_CALCULATION = "keyCalculation";
     public Calculation calculation;
@@ -27,8 +35,26 @@ public class CalculatorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        ThemeStorage storage = ThemeStorage.getInstance(getApplicationContext());
+
+        Theme savedTheme = storage.getTheme();
+
+        ActivityResultLauncher<Intent> launcher=registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+
+                if (result.getResultCode()== Activity.RESULT_OK){
+                    Intent data=result.getData();
+                    Theme coosedTheme = (Theme) data.getSerializableExtra(ThemeSelectActivity.CHOOSED_THEME);
+                    storage.saveTheme(coosedTheme);
+                    recreate();
+
+                }
+            }
+        });
+
         // Выставляем тему
-        Theme savedTheme= ThemeStorage.getInstance(getApplicationContext()).getTheme();
+
         setTheme(savedTheme.getTheme());
 
         setContentView(R.layout.activity_main);
@@ -37,9 +63,9 @@ public class CalculatorActivity extends AppCompatActivity {
 
         calculation = new Calculation();                    // класс для расчетов
 
-        if (savedInstanceState!=null){
+        if (savedInstanceState != null) {
             display.setText(savedInstanceState.getString(DISPLAY));
-            calculation=savedInstanceState.getParcelable(KEY_CALCULATION);
+            calculation = savedInstanceState.getParcelable(KEY_CALCULATION);
         }
         // Слушатель нажатия кнопок
         View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -113,6 +139,10 @@ public class CalculatorActivity extends AppCompatActivity {
                     case R.id.buttonC:
                         calculation.reset();
                         display.setText("0");
+                    case R.id.buttonTheme:
+                        Intent intent = new Intent(CalculatorActivity.this, ThemeSelectActivity.class);
+                        intent.putExtra(ThemeSelectActivity.SELECTED_THEME, savedTheme);
+                        launcher.launch(intent);
                 }
             }
         };
@@ -133,7 +163,7 @@ public class CalculatorActivity extends AppCompatActivity {
         findViewById(R.id.buttonDot).setOnClickListener(onClickListener);
         findViewById(R.id.buttonEquals).setOnClickListener(onClickListener);
         findViewById(R.id.buttonC).setOnClickListener(onClickListener);
-
+        findViewById(R.id.buttonTheme).setOnClickListener(onClickListener);
     }
 
     // Вывод информации на дисплей
