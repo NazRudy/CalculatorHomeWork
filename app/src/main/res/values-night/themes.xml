@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.CalculatorHomeWork" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.CalculatorHomeWorkNight" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,5 +12,11 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="materialButtonStyle">@style/CalcButton</item>
     </style>
+        <style name="Theme.CalculatorHomeWorkNightV2">
+        <item name="materialButtonStyle">@style/CalcButtonV2</item>
+    </style>
+
+    <style name="Theme">calkulatorHomeWorkNightV2</style>
 </resources>
