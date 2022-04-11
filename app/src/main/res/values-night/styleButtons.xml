@@ -9,7 +9,16 @@
         <item name="strokeColor">@color/white</item>
         <item name="backgroundTint">@color/black</item>
     </style>
-    <style name="CalcButtonNight" >
+    <style name="CalcButtonNightVni" >
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="cornerRadius">@dimen/cornerRadius</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="strokeWidth">@dimen/strokeWidth</item>
+        <item name="strokeColor">@color/black</item>
+        <item name="backgroundTint">@color/cCCCCCC</item>
+    </style>
+    <style name="CalcButtonVni" >
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/button_text_size</item>
         <item name="cornerRadius">@dimen/cornerRadius</item>
